@@ -12,14 +12,18 @@ export const metadata: Metadata = {
 	description: "Seu app para controle finaceiro!",
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
+type RootProps = Readonly<{
 	children: React.ReactNode;
-}>) {
+}>;
+
+export default function RootLayout({ children }: RootProps) {
 	return (
-		<html lang="en">
-			<body className={font.className}>{children}</body>
+		<html lang="en" className="">
+			<body
+				className={`${font.className} min-h-screen flex flex-col bg-background`}
+			>
+				{children}
+			</body>
 		</html>
 	);
 }
